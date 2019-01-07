@@ -13,7 +13,8 @@ class CountiesTableSeeder extends Seeder
     public function run()
     {
         County::create([
-        'county_name' => 'Zagreb'
+        'county_name' => 'Zagreb',
+        'continent_id' => '1' 
         ]);
     }
 }

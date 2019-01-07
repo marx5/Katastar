@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
+      <th scope="col">Continent</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
     <tr>
       <td><?= $county->id ?></td>
       <td><?= $county->county_name ?></td>
+      <td><?= $county->continent->continent_name?></td>
     </tr>
   @endforeach
   </tbody>

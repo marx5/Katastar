@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CountyController extends Controller
+class ContinentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +13,10 @@ class CountyController extends Controller
      */
     public function index()
     {
-    $counties = \App\County::with('continent')->paginate();
-    return view('counties/index', ['counties' => $counties]);
+        $continents = \App\Continent::paginate();
+        return view('continents/index', ['continents' => $continents]);
     }
 
-    /*    $cities = \App\City::with('country')->paginate();
-    return view('cities/index', ['cities' => $cities]);*/ 
     /**
      * Show the form for creating a new resource.
      *
@@ -26,15 +24,22 @@ class CountyController extends Controller
      */
     public function create()
     {
-        return view('counties/create');
+        return view('continents/create');
     }
-    
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $data = $request->input();
-        \App\County::create($data);
-        return redirect()-> action('CountyController@index');
+        \App\Continent::create($data);
+        return redirect()->action('ContinentController@index');
     }
+
     /**
      * Display the specified resource.
      *
@@ -79,5 +84,4 @@ class CountyController extends Controller
     {
         //
     }
-  
 }

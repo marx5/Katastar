@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/', 'DocumentController@index')->name('documents');
 
 Route::get('/documents', 'DocumentController@index')->name('documents');
 Route::post('/documents', 'DocumentController@store')->name('documents.store');
+
+Route::get('/continents', 'ContinentController@index');
+Route::get('/continents/new', 'ContinentController@create');
+Route::post('/continents', 'ContinentController@store');
 
 Route::get('/counties', 'CountyController@index');
 Route::get('/counties/new', 'CountyController@create');

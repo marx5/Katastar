@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountiesTable extends Migration
+class CreateContinentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateCountiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('counties', function (Blueprint $table) {
+        Schema::create('continents', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('county_name');
-            $table->unsignedInteger('continent_id');
-            $table->foreign('continent_id')->references('id')->on('continents');
+            $table->string('continent_name');
+            $table->decimal('number_of_countries')->default(0);
+            $table->string('native_name')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateCountiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('counties');
+        Schema::drop('continents');
     }
 }
