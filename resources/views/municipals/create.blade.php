@@ -6,8 +6,13 @@
 @csrf
 
 <div class="form-group">
-    <input class="form-control" name="county_id" type="text" placeholder="county_id">
+    <select class="form-control" name="county_id">
+        @foreach($counties as $county)
+        <option value="{{ $county->id }}">{{ $county->county_name }}</option>
+        @endforeach
+    </select>
 </div>
+
 <div class="form-group">
     <input class="form-control" name="municipal_name" type="text" placeholder="Municipal name">
 </div>
@@ -16,3 +21,7 @@
 </form>
 
 @endsection
+
+
+
+

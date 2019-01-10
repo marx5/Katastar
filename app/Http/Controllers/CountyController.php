@@ -26,7 +26,8 @@ class CountyController extends Controller
      */
     public function create()
     {
-        return view('counties/create');
+        $continents = \App\Continent::all();
+        return view('counties/create', ['continents'=>$continents]);
     }
     
     public function store(Request $request)

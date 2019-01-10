@@ -24,8 +24,8 @@ class MunicipalController extends Controller
      */
     public function create()
     {
-        $cities = \App\City::all();
-        return view('municipals/create');
+        $counties = \App\County::all();
+        return view('municipals/create',['counties'=>$counties]);
     }
     
      /**

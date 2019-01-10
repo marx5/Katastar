@@ -8,7 +8,7 @@
 <div class="form-group">
     <select class="form-control" name="municipal_id">
         @foreach($municipals as $municipal)
-        <option value="{{ $municipal->id }}">{{ $municipal->municipla_name }}</option>
+        <option value="{{ $municipal->municipal_name }}">{{ $municipal->municipal_name }}</option>
         @endforeach
     </select>
 </div>
