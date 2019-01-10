@@ -17,4 +17,9 @@ class Realestate extends Model
     {
         return $this->belongsTo(\App\Realestate_type::class);
     }
+
+    public function ownership()
+    {
+        return $this->belongsToMany(\App\Owner::class);
+    }
 }

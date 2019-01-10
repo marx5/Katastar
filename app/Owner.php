@@ -15,6 +15,6 @@ class Owner extends Model
 
     public function ownerships()
     {
-        return $this->hasMany(\App\Ownership::class);
+        return $this->belongsToMany(\App\Realestate::class);
     }
 }

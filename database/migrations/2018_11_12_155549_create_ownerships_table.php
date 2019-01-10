@@ -15,9 +15,9 @@ class CreateOwnershipsTable extends Migration
         Schema::create('ownerships', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('owner_id');
-            $table->foreign('owner_id')->references('id')->on('owners');
+            /*$table->foreign('owner_id')->references('id')->on('owners');*/
             $table->unsignedInteger('realestate_id');
-            $table->foreign('realestate_id')->references('id')->on('realestates');
+            /*$table->foreign('realestate_id')->references('id')->on('realestates');*/
             $table->timestamps();
         });
     }

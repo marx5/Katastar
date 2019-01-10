@@ -13,8 +13,8 @@ class LandRegisterController extends Controller
      */
     public function index()
     {
-    $land_registers = \App\LandRegister::with('city')->paginate();
-    return view('land_registers/index', ['land_registers' => $land_registers]);
+    $landregisters = \App\LandRegister::with('city')->paginate();
+    return view('land_registers/index', ['land_registers' => $landregisters]);
     }
 
     /**

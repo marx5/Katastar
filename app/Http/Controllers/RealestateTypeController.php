@@ -14,7 +14,7 @@ class RealestateTypeController extends Controller
     public function index()
     {
     $realestate_types = \App\RealestateType::paginate();
-    return view('realestate_types/index', ['realestate_types' => $realestate_types]);
+    return view('realestatetypes/index', ['realestatetypes' => $realestate_types]);
     }
 
     /**
@@ -24,7 +24,7 @@ class RealestateTypeController extends Controller
      */
     public function create()
     {
-        return view('realestate_types/create');
+        return view('realestatetypes/create');
     }
     
     /**
