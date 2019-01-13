@@ -13,4 +13,8 @@ class LandRegister extends Model
         return $this->belongsTo(\App\City::class);
     }
     
+    public function ownerships()
+    {
+        return $this->belongsToMany(\App\Realestate::class);
+    }
 }

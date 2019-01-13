@@ -22,11 +22,16 @@ class LandRegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+   /* public function create()
 {
     return view('land_registers/create');
 }
-
+*/
+    public function create()
+    {
+        $cities = \App\City::all();
+        return view('land_registers/create',['cities'=>$cities]);
+    }
  /**
      * Store a newly created resource in storage.
      *

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-primary float-right" href="/land_registers/new">New</a>
+<a class="btn btn-primary float-right" href="/landregisters/new">New</a>
 <table class="table">
   <thead>
     <tr>

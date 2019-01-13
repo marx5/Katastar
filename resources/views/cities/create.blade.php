@@ -5,15 +5,17 @@
 <form method="post" action="/cities">
 @csrf
 
+
+<div class="form-group">
+    <input class="form-control" name="city_name" type="text" placeholder="City name">
+</div>
+
 <div class="form-group">
     <select class="form-control" name="municipal_id">
         @foreach($municipals as $municipal)
-        <option value="{{ $municipal->municipal_name }}">{{ $municipal->municipal_name }}</option>
+        <option value="{{ $municipal->id }}">{{ $municipal->municipal_name }}</option>
         @endforeach
     </select>
-</div>
-<div class="form-group">
-    <input class="form-control" name="city_name" type="text" placeholder="City name">
 </div>
 
 <button type="submit" class="btn btn-success">Submit</button>

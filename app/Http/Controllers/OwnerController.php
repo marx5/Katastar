@@ -24,7 +24,8 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        return view('owners/create');
+        $cities = \App\City::all();
+        return view('owners/create',['cities'=>$cities]);
     }
     
     /**

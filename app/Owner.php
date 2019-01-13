@@ -13,8 +13,8 @@ class Owner extends Model
         return $this->belongsTo(\App\City::class);
     }
 
-    public function ownerships()
+    public function realestates()
     {
-        return $this->belongsToMany(\App\Realestate::class);
+        return $this->belongsToMany(\App\Owner::class);
     }
 }
