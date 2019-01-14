@@ -16,13 +16,13 @@ class CreateRealestatesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('city_id');
-            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->unsignedInteger('realestate_type_id');
-            $table->foreign('realestate_type_id')->references('id')->on('realestate_types');
+            $table->foreign('realestate_type_id')->references('id')->on('realestate_types')->onDelete('cascade');
             $table->unsignedInteger('owner_id');
             $table->foreign('owner_id')->references('id')->on('owners');
             $table->unsignedInteger('land_register_id');
-            $table->foreign('land_register_id')->references('id')->on('land_registers');
+            $table->foreign('land_register_id')->references('id')->on('land_registers')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -41,15 +41,17 @@ class LandRegisterController extends Controller
     
 public function store(Request $request)
 {
-   /* $validator = \Validator::make($request->all(), [
-        'name' => 'required|max:255',
-        'city_id' => 'required'
+    $validator = \Validator::make($request->all(), [
+        
+        'city_id' => 'required',
+        'name' => 'required|max:255'
+        
     ]);
 
     if ($validator->fails()) {
         return redirect()->action('LandRegisterController@create')
             ->withErrors($validator);
-    }*/
+    }
     $data = $request->input();
     \App\LandRegister::create($data);
     return redirect()->action('LandRegisterController@index');

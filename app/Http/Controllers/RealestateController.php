@@ -39,6 +39,14 @@ class RealestateController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required|max:255'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('RealestateController@create')
+                ->withErrors($validator);
+        }
         $data = $request->input();
         \App\Realestate::create($data);
         return redirect()-> action('RealestateController@index');

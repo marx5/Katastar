@@ -36,15 +36,16 @@ class MunicipalController extends Controller
      */
     public function store(Request $request)
     {
-        /*$validator = \Validator::make($request->all(), [
-            'municipal_name' => 'required|max:255',
-            'county_id' => 'required'
+        $validator = \Validator::make($request->all(), [
+            'county_id' => 'required',
+            'municipal_name' => 'required|max:255'
+            
         ]);
     
         if ($validator->fails()) {
             return redirect()->action('MunicipalController@create')
                 ->withErrors($validator);
-        }*/
+        }
     
         $data = $request->input();
         \App\Municipal::create($data);

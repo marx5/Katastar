@@ -36,18 +36,20 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-       /* $validator = \Validator::make($request->all(), [
+        $validator = \Validator::make($request->all(), [
             'city_name' => 'required|max:255',
-            'county_id' => 'required'
+            'municipal_id' => 'required'
         ]);
     
         if ($validator->fails()) {
             return redirect()->action('CityController@create')
                 ->withErrors($validator);
-        }*/
+        }
+    
         $data = $request->input();
         \App\City::create($data);
         return redirect()-> action('CityController@index');
+    
     }
     /**
      * Display the specified resource.

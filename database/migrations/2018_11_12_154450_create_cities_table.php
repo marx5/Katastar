@@ -16,7 +16,7 @@ class CreateCitiesTable extends Migration
             $table->increments('id');
             $table->string('city_name');
             $table->unsignedInteger('municipal_id');
-            $table->foreign('municipal_id')->references('id')->on('municipals');
+            $table->foreign('municipal_id')->references('id')->on('municipals')->onDelete('cascade');
             $table->timestamps();
         });
     }
