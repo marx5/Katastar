@@ -13,7 +13,7 @@ class RealestatesTableSeeder extends Seeder
     public function run()
     {
         Realestate::create([
-            'name' => 'house', 'realestate_type_id' => 1, 'city_id' => 1
+            'name' => 'house', 'realestate_type_id' => 1, 'city_id' => 1, 'owner_id' => 1, 'land_register_id' => 1
         ]);
     }
 }

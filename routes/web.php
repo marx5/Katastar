@@ -14,7 +14,7 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/', 'DocumentController@index')->name('documents');
+Route::get('/', 'RealestateController@index')->name('realestates');
 
 Route::get('/documents', 'DocumentController@index')->name('documents');
 Route::post('/documents', 'DocumentController@store')->name('documents.store');
@@ -57,6 +57,7 @@ Route::get('/realestatetypes/new', 'RealestateTypeController@create');
 Route::post('/realestatetypes', 'RealestateTypeController@store');
 Route::get('/realestatetypes/delete/{id}', 'RealestateTypeController@destroy');
 
-Route::get('/realestate', 'RealestateController@index');
-Route::get('/realestate/new', 'RealestateController@create');
-Route::post('/realestate', 'RealestateController@store');
+Route::get('/realestates', 'RealestateController@index');
+Route::get('/realestates/new', 'RealestateController@create');
+Route::post('/realestates', 'RealestateController@store');
+Route::get('/realestates/delete/{id}', 'RealestateController@destroy');

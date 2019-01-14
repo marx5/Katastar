@@ -35,6 +35,14 @@ class RealestateTypeController extends Controller
      */
     public function store(Request $request)
     {
+        /*$validator = \Validator::make($request->all(), [
+            'realestate_type_name' => 'required|max:255'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('RealestateTypeController@create')
+                ->withErrors($validator);
+        }*/
         $data = $request->input();
         \App\RealestateType::create($data);
         return redirect()-> action('RealestateTypeController@index');

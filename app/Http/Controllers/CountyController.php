@@ -32,6 +32,16 @@ class CountyController extends Controller
     
     public function store(Request $request)
     {
+       /* $validator = \Validator::make($request->all(), [
+            'county_name' => 'required|max:255',
+            'continent_id' => 'required'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('CountyController@create')
+                ->withErrors($validator);
+        }
+    */
         $data = $request->input();
         \App\County::create($data);
         return redirect()-> action('CountyController@index');

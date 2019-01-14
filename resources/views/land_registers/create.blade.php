@@ -2,6 +2,16 @@
 
 @section('content')
 
+@if($errors->count() > 0)
+    <div class="alert alert-danger" role="alert">
+        @foreach($errors->all() as $message)
+            <?= $message ?>
+        @endforeach
+    </div>
+@endif
+
+<form method="post" action="/landregisters" class="col-md-5 mx-auto">
+
 <form method="post" action="/landregisters">
 @csrf
 

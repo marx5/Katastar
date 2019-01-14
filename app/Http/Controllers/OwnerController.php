@@ -36,6 +36,15 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
+       /* $validator = \Validator::make($request->all(), [
+            'owner_name' => 'required|max:255',
+            'city_id' => 'required'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('OwnerController@create')
+                ->withErrors($validator);
+        }*/
         $data = $request->input();
         \App\Owner::create($data);
         return redirect()-> action('OwnerController@index');

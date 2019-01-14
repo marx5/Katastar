@@ -19,6 +19,10 @@ class CreateRealestatesTable extends Migration
             $table->foreign('city_id')->references('id')->on('cities');
             $table->unsignedInteger('realestate_type_id');
             $table->foreign('realestate_type_id')->references('id')->on('realestate_types');
+            $table->unsignedInteger('owner_id');
+            $table->foreign('owner_id')->references('id')->on('owners');
+            $table->unsignedInteger('land_register_id');
+            $table->foreign('land_register_id')->references('id')->on('land_registers');
             $table->timestamps();
         });
     }

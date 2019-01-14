@@ -35,10 +35,10 @@
         <a class="nav-link" href="/owners">Owners</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/ownerships">Ownerships</a>
+        <a class="nav-link" href="/realestates">Realestates</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/realestatetypes">Realestate_types</a>
+        <a class="nav-link" href="/realestatetypes">Realestate Types</a>
     </li>
 </ul>
         </div>

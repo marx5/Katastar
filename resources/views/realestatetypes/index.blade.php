@@ -15,6 +15,7 @@
     <tr>
       <td><?= $realestate_type->id ?></td>
       <td><?= $realestate_type->name ?></td>
+      <td><a href="/realestatetypes/delete/{{ $realestate_type->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

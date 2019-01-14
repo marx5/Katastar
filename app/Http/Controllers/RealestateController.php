@@ -13,7 +13,7 @@ class RealestateController extends Controller
      */
     public function index()
     {
-    $realestates = \App\Realestate::with('country')->paginate();
+    $realestates = \App\Realestate::with('realestateType','City','Owner')->paginate();
     return view('realestates/index', ['realestates' => $realestates]);
     }
 
@@ -24,7 +24,11 @@ class RealestateController extends Controller
      */
     public function create()
     {
-        return view('realestates/create');
+        $data['realestate_types'] = \App\RealestateType::all();
+        $data ['cities'] = \App\City::all();
+        $data['owners'] = \App\Owner::all();
+        $data['land_registers'] = \App\LandRegister::all();
+        return view('realestates/create',['data'=>$data]);
     }
     
     /**
@@ -82,6 +86,7 @@ class RealestateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Realestate::destroy($id);
+        return redirect()->action('RealestateController@index');
     }
 }

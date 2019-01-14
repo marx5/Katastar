@@ -5,11 +5,38 @@
 <form method="post" action="/realestates">
 @csrf
 
+
 <div class="form-group">
-    <input class="form-control" name="realestate_id" type="text" placeholder="realestate_id">
+    <input class="form-control" name="name" type="text" placeholder="Realestate name">
 </div>
 <div class="form-group">
-    <input class="form-control" name="realestate_name" type="text" placeholder="Realestate name">
+    <select class="form-control" name="realestate_type_id">
+        @foreach($data['realestate_types'] as $realestate_type)
+        <option value="{{ $realestate_type->id }}">{{ $realestate_type->name }}</option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
+    <select class="form-control" name="city_id">
+        @foreach($data['cities'] as $city)
+        <option value="{{ $city->id }}">{{ $city->city_name }}</option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
+    <select class="form-control" name="owner_id">
+        @foreach($data['owners'] as $owner)
+        <option value="{{ $owner->id }}">{{ $owner->name }}</option>
+        @endforeach
+    </select>
+</div>
+
+<div class="form-group">
+    <select class="form-control" name="land_register_id">
+        @foreach($data['land_registers'] as $land_register)
+        <option value="{{ $land_register->id }}">{{ $land_register->name }}</option>
+        @endforeach
+    </select>
 </div>
 
 <button type="submit" class="btn btn-success">Submit</button>
