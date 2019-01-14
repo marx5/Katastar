@@ -81,9 +81,10 @@ class CityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
-    }
+{
+    \App\City::destroy($id);
+    return redirect()->action('CityController@index');
+}
 
 }
 

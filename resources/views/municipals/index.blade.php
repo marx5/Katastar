@@ -15,6 +15,7 @@
       <td><?= $municipal->id ?></td>
       <td><?= $municipal->municipal_name ?></td>
       <td><?= $municipal->county->county_name ?></td>
+      <td><a href="/municipals/delete/{{ $municipal->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

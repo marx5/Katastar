@@ -17,6 +17,7 @@
       <td><?= $owner->id ?></td>
       <td><?= $owner->name ?></td>
       <td><?= $owner->city->city_name ?></td>
+      <td><a href="/owners/delete/{{ $owner->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

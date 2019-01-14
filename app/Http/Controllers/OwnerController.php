@@ -83,6 +83,7 @@ class OwnerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Owner::destroy($id);
+        return redirect()->action('OwnerController@index');
     }
 }

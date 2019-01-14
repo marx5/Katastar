@@ -82,8 +82,9 @@ class MunicipalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
-    }
+{
+    \App\Municipal::destroy($id);
+    return redirect()->action('MunicipalController@index');
+}
     
 }

@@ -87,6 +87,9 @@ public function store(Request $request)
      */
     public function destroy($id)
     {
-        //
+        
+        \App\LandRegister::destroy($id);
+        return redirect()->action('LandRegisterController@index');
+
     }
 }

@@ -82,6 +82,7 @@ class RealestateTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\RealestateType::destroy($id);
+        return redirect()->action('RealestateTypeController@index');
     }
 }

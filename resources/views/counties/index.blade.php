@@ -16,6 +16,7 @@
       <td><?= $county->id ?></td>
       <td><?= $county->county_name ?></td>
       <td><?= $county->continent->continent_name?></td>
+      <td><a href="/counties/delete/{{ $county->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>
